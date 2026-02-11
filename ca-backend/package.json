@@ -2,6 +2,17 @@
   "name": "cashinvoice-backend",
   "version": "1.0.0",
   "description": "Student Management System - Backend",
+  "homepage": "https://github.com/udit-oss/cashinvoice-assignment#readme",
+  "bugs": {
+    "url": "https://github.com/udit-oss/cashinvoice-assignment/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/udit-oss/cashinvoice-assignment.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
   "main": "src/app.ts",
   "scripts": {
     "dev": "nodemon --exec ts-node src/app.ts",
