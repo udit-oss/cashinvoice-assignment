@@ -19,6 +19,11 @@ export interface Student {
   updated_at: Date;
 }
 
+export interface LoginRequest {
+  email: string;
+  password: string;
+}
+
 export interface JWTPayload {
   user_id: number;
   email: string;

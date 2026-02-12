@@ -3,6 +3,8 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 import { environment } from './config/environment';
 import { logger } from './utils/logger';
+import authRouter from './api/routes/authRouter';
+import studentRouter from './api/routes/studentRouter';
 
 dotenv.config();
 
@@ -16,9 +18,8 @@ app.get('/health', (req: Request, res: Response) => {
     res.status(200).json({ status: 'OK', timestamp: new Date().toISOString() });
 });
 
-// Routes will be added here later
-// app.use('/api/auth', authRoutes);
-// app.use('/api/students', studentRoutes);
+app.use('/api/auth', authRouter);
+app.use('/api/students', studentRouter);
 
 app.use((req: Request, res: Response) => {
     res.status(404).json({ error: 'Not Found' });

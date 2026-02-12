@@ -3,12 +3,6 @@ export enum AuthQueries {
                        FROM users WHERE email = $1`,
 }
 
-export enum UserQueries {
-  GET_USER_BY_ID = `SELECT user_id, email, role, created_at, updated_at 
-                    FROM users WHERE user_id = $1`,
-  EXISTS_BY_EMAIL = `SELECT EXISTS(SELECT 1 FROM users WHERE email = $1)`,
-}
-
 export enum StudentQueries {
   CREATE = `INSERT INTO students(name, email, age, course, status, created_by, created_at, updated_at)
             VALUES ($1, $2, $3, $4, $5, $6, NOW(), NOW()) RETURNING student_id`,
