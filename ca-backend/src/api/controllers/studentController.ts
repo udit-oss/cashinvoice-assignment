@@ -110,6 +110,25 @@ const studentController = {
                 error: 'Failed to delete student' 
             });
         }
+    },
+    searchStudents: async (req: Request, res: Response) => {
+        try {
+            const { term } = req.query;
+            
+            if (!term || typeof term !== 'string') {
+                return res.status(StatusCode.BAD_REQUEST).json({ 
+                    error: 'Search term is required' 
+                });
+            }
+
+            const students = await studentService.searchStudents(term);
+            return res.status(StatusCode.OK).json(students);
+        } catch (error: any) {
+            logger.error(`Search students error: ${error.message}`);
+            return res.status(StatusCode.INTERNAL_SERVER_ERROR).json({ 
+                error: 'Failed to search students' 
+            });
+        }
     }
 }
 

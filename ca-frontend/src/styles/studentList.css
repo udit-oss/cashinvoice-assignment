@@ -23,12 +23,48 @@
   border-radius: 4px;
   cursor: pointer;
   font-size: 14px;
-  white-space: nowrap;  
-  width: auto;          
+  white-space: nowrap;
+  width: auto;
 }
 
 .btn-primary:hover {
   background-color: #45a049;
+}
+
+.search-box {
+  margin-bottom: 20px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.search-box input {
+  width: 100%;
+  max-width: 400px;
+  padding: 10px 15px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.search-box input:focus {
+  outline: none;
+  border-color: #4CAF50;
+}
+
+.clear-search {
+  padding: 10px 15px;
+  background-color: #757575;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+.clear-search:hover {
+  background-color: #616161;
 }
 
 table {
@@ -87,4 +123,45 @@ tr:hover {
   padding: 10px;
   border-radius: 4px;
   margin-bottom: 20px;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  margin-top: 20px;
+}
+
+.page-btn {
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  background-color: white;
+  color: #333;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.2s;
+}
+
+.page-btn:hover:not(:disabled) {
+  background-color: #f5f5f5;
+}
+
+.page-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.page-btn.active {
+  background-color: #4CAF50;
+  color: white;
+  border-color: #4CAF50;
+}
+
+.pagination-info {
+  text-align: center;
+  margin-top: 10px;
+  color: #666;
+  font-size: 14px;
 }

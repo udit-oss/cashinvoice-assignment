@@ -5,7 +5,7 @@ import { logger } from './logger';
 
 export const generateToken = (payload: JWTPayload): string => {
     try {
-        return jwt.sign(payload, environment.jwtSecret!, { expiresIn: '1h' });
+        return jwt.sign(payload, environment.jwtSecret!, { expiresIn: '24h' });
     } catch (error: any) {
         logger.error(`Error generating JWT: ${error.message}`);
         throw error;

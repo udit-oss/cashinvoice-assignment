@@ -24,5 +24,10 @@ export const studentApi = {
 
   delete: async (id: number): Promise<void> => {
     await api.delete(`/students/${id}`);
-  }
+  },
+
+  search: async (searchTerm: string): Promise<Student[]> => {
+    const response = await api.get(`/students/search?term=${searchTerm}`);
+    return response.data;
+}
 };
