@@ -8,7 +8,7 @@ export enum StudentQueries {
             VALUES ($1, $2, $3, $4, $5, $6, NOW(), NOW()) RETURNING student_id`,
   
   GET_ALL = `SELECT student_id, name, email, age, course, status, created_by, created_at, updated_at
-             FROM students ORDER BY created_at DESC`,
+             FROM students ORDER BY student_id ASC`,
   
   GET_BY_ID = `SELECT student_id, name, email, age, course, status, created_by, created_at, updated_at
                FROM students WHERE student_id = $1`,
