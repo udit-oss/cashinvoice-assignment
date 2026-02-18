@@ -15,9 +15,6 @@ const authController ={
                 return res.status(StatusCode.BAD_REQUEST).json({ error: error.error.details[0].message });
             }
             
-            if (!user.email || !user.password) {
-            return res.status(StatusCode.BAD_REQUEST).json({ error: 'Email and password required' });
-            }
             const token = await authService.login(user.email, user.password);
             res.status(StatusCode.OK).json({ 
                 token,
